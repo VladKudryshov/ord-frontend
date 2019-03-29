@@ -1,12 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import LoginComponent from "./components/LoginComponent/LoginComponent";
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    NavLink
+} from 'react-router-dom';
+import NotFound from "./components/NotFound";
+import ProductListComponent from "./components/ProductListComponent";
+import CartComponent from "./components/CartComponent";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const routing = (
+    <Router>
+        <header>
+            <ul className="menu">
+                <li><NavLink exact to="/">Home</NavLink></li>
+                <li><NavLink to="/login" activeClassName="active">Login</NavLink></li>
+                <li><NavLink to="/products" activeClassName="active">products</NavLink></li>
+                <li><NavLink to="/cart" activeClassName="active">cart</NavLink></li>
+            </ul>
+        </header>
+        <div>
+            <Switch>
+                <Route path="/" exact component={App}/>
+                <Route path="/login" component={LoginComponent}/>
+                <Route path="/cart" component={CartComponent}/>
+                <Route path="/products" exact component={ProductListComponent}/>
+                <Route path="*" component={NotFound}/>
+            </Switch>
+        </div>
+    </Router>
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+ReactDOM.render(routing, document.getElementById('root'));

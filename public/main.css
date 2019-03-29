@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.form{
+    background: #ffffff;
+    margin: 100px auto;
+
+}
+
+.input-100 {
+    width: 150px;
+    border: 1px solid #b2b2b2;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.btn{
+    width: 100%;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 3px;
+}
+
+.form{
+    width: 150px;
+    display: grid;
+    grid-row-gap: 15px;
+}
+
+li, ul{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+
+}
+
+li,ul, ol, a {
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu {
+    background: #e9e9e9;
+    width: 100%;
+    text-align: right;
+}
+
+li {
+    padding: 20px 30px ;
+    color: #000000;
+}
+
+.active{
+    color: #ffffff;
+}
+
+
+
